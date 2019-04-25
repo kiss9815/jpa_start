@@ -5,12 +5,20 @@ import java.io.Serializable;
 import javax.persistence.*;
 import javax.persistence.Entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @Entity
-public class BlogPost implements Serializable{
+@Table(name="boilerplate.blog_post")
+public class BlogPost {
 
 	@Id
 	private Long id;
 	
-	@Column(name = "name", nullable = false)
-    private String name;
+	@Column(name = "title")
+    private String title;
+	
+	
 }
